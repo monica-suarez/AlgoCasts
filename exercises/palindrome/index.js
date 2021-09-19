@@ -7,6 +7,35 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+// function palindrome(str) {
+//   let reversedStr = str.split('').reverse().join('');
+//   if(str === reversedStr){
+//       return true
+//   }
+//   else return false
+// }
+
+// function palindrome(str){
+//     let reversedStr = '';
+//     for(let char of str){
+//         reversedStr = char + reversedStr
+//     }
+//     if(reversedStr === str){
+//         return true
+//     } else return false
+// }
+
+// function palindrome(str){
+// const rev = str.split('').reverse().join('');
+//     return str === rev;
+// }
+
+function palindrome(str){
+    return str.split('').every((char, i)=>{
+        return char === str[str.length-i-1]
+    });
+}
+//every is not ideal solution, because it runs the 
+//whole array, doing double the work
 
 module.exports = palindrome;
